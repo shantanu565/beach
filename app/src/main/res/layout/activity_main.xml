@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.shantanu.basedemo.viewmodel.UserViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <EditText
+            android:id="@+id/inname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="name"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="50dp"
+            android:text="@={viewModel.email}" />
+
+        <EditText
+            android:id="@+id/inemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="email"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="10dp"
+            android:text="@={viewModel.name}" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:onClick="@{()-> viewModel.onLoginClicked()}"
+            android:text="LOGIN" />
+
+    </LinearLayout>
+
+
+
+</layout>
